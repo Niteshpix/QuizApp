@@ -28,7 +28,7 @@ const End = ({ results, data, onReset, time }) => {
     // eslint-disable-next-line
   }, []);
 
-  //console.log(data.q)
+  console.log(results)
 
   return (
     <div className="card">
@@ -66,14 +66,12 @@ const End = ({ results, data, onReset, time }) => {
                     Your answer: {'xyz'}
                   </span><br></br>*/}
               
-                
+                  
+                  
                     <span className="has-background-link has-text-white p-2">
                     Correct answer: {result.answer}
-                   
                     </span>
-                  
-                  
-                  
+                
                 </li>
               ))}
 
