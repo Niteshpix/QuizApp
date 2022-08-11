@@ -1,0 +1,33 @@
+{
+  "data": [
+    {
+      "question": "Ques:1 What is the capital of Croatia ?",
+      "choices": ["Split", "sijek", "Zagreb", "Rijeka"],
+      "answer": ["Zagreb"],
+      "userAnswer" : []
+    },
+    {
+      "question": "Ques:2 What is the capital of Slovenia ?",
+      "choices": ["Celje", "Ljubljana", "Maribor", "Koper"],
+      "answer": ["Ljubljana"],
+      "userAnswer" : []
+    },
+    {
+      "question": "Ques:3 What is the React ?",
+      "choices": ["User interface pgl", "UI devlop", "Maribor", "Koper"],
+      "answer": ["User interface pgl", "UI devlop"],
+      "userAnswer" : []
+    },{
+      "question": "Ques:4 Who is the Chief Minister of Bihar?",
+      "choices": ["nitish kumar", "Lalu Yadav", "Rajnath Singh", "Sarad Pawar"],
+      "answer": ["nitish kumar"],
+      "userAnswer" : []
+    },{
+      "question": "Ques:5 Father of Computer ?",
+      "choices": ["Allen Turing", "Charles Babbage", "Simur Cray", "Augusta Adaming"],
+      "answer": ["Charkes Babbage"],
+      "userAnswer" : []
+    }
+   
+  ]
+}
