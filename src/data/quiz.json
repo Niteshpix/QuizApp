@@ -25,7 +25,7 @@
     },{
       "question": "Ques:5 Father of Computer ?",
       "choices": ["Allen Turing", "Charles Babbage", "Simur Cray", "Augusta Adaming"],
-      "answer": ["Charkes Babbage"],
+      "answer": ["Charles Babbage"],
       "userAnswer" : []
     }
    

@@ -30,32 +30,24 @@ const Question = ({
     }
   };
 
- 
-
-  const backClickHandler = () => { 
+  const backClickHandler = () => {
+   
     if(activeQuestion < numberOfQuestions -1) {
       onSetActiveQuestion(activeQuestion -1);
+    }else{
+      onSetStep(3);
     }
-   
-    
-    
-   }
-
-
+  };
 
   const nextClickHandler = () => {
-
     let elems = Array.from(document.querySelectorAll(".checbox"));
-    
 
     elems.map((elem) => (elem.checked = false));
 
-   
-
     let answerSelected = Array.from(selected);
 
-    if(answerSelected.length==0){
-      return setError("please select")
+    if (answerSelected.length == 0) {
+      return setError("please select");
     }
 
     let answerdata = data.choices.filter((elem, index) =>
@@ -97,16 +89,22 @@ const Question = ({
                   value={choice}
                   id={i}
                   onChange={changeHandler}
-            onClick={()=>setError(!error)}
+                  onClick={() => setError(!error)}
                 />
                 {choice}
               </label>
             ))}
           </div>
-          
-         
+          {activeQuestion!==0?
 
-          <button disabled={selected.length<1} onClick={backClickHandler} className="button is-link is-medium is-fullwidth mt-4"> Back</button>
+          <button
+          
+            onClick={backClickHandler()}
+            className="button is-link is-medium is-fullwidth mt-4"
+          >
+            
+            Back
+          </button>:''}
 
           <button
             className="button is-link is-medium is-fullwidth mt-4"
@@ -116,9 +114,6 @@ const Question = ({
           </button>
 
           {error && <div style={{ color: "red" }}>{error}</div>}
-
-
-          
         </div>
       </div>
     </div>
@@ -126,16 +121,5 @@ const Question = ({
 };
 
 export default Question;
-
-
-
-
-
-
-
-
-
-
-
 
 /*eslint eqeqeq: "off"*/
