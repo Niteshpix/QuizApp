@@ -56,7 +56,7 @@ const End = ({ results, data, onReset, time }) => {
               Your answers
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              {results.map((result, i) => (
+              {data.map((result, i) => (
                 <li key={i} className="mb-6">
                 
                 <strong>{result.question}</strong>
@@ -66,12 +66,14 @@ const End = ({ results, data, onReset, time }) => {
                     Your answer: {'xyz'}
                   </span><br></br>*/}
               
-                  
-                  {result.a !== data[i].answer && 
+                
                     <span className="has-background-link has-text-white p-2">
-                    Correct answer: {data[i].answer}
+                    Correct answer: {result.answer}
+                   
                     </span>
-                  }
+                  
+                  
+                  
                 </li>
               ))}
 

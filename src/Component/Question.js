@@ -30,15 +30,6 @@ const Question = ({
     }
   };
 
-  const backClickHandler = () => {
-   
-    if(activeQuestion < numberOfQuestions -1) {
-      onSetActiveQuestion(activeQuestion -1);
-    }else{
-      onSetStep(3);
-    }
-  };
-
   const nextClickHandler = () => {
     let elems = Array.from(document.querySelectorAll(".checbox"));
 
@@ -74,6 +65,14 @@ const Question = ({
       onSetStep(3);
     }
   };
+  //console.log(activeQuestion)
+
+  const backClickHandler = () => {
+    if(activeQuestion!==0){
+      onSetActiveQuestion(activeQuestion-1)
+    }
+  };
+
   return (
     <div className="card">
       <div className="card-content">
@@ -95,19 +94,21 @@ const Question = ({
               </label>
             ))}
           </div>
-          {activeQuestion!==0?
+
+          {activeQuestion !== 0 ? (
+            <button
+              onClick={backClickHandler}
+              className="btn button is-link is-medium is-fullwidth mt-4"
+            >
+             
+              Back
+            </button>
+          ) : (
+            ""
+          )}
 
           <button
-          
-            onClick={backClickHandler()}
-            className="button is-link is-medium is-fullwidth mt-4"
-          >
-            
-            Back
-          </button>:''}
-
-          <button
-            className="button is-link is-medium is-fullwidth mt-4"
+            className="btn button is-link is-medium is-fullwidth mt-4"
             onClick={nextClickHandler}
           >
             Next
