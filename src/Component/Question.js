@@ -30,18 +30,6 @@ const Question = ({
     }
   };
 
- 
-
-  const backClickHandler = () => { 
-    if(activeQuestion < numberOfQuestions -1) {
-      onSetActiveQuestion(activeQuestion -1);
-    }
-   
-    
-    
-   }
-
-
 
   const nextClickHandler = () => {
 
@@ -82,6 +70,13 @@ const Question = ({
       onSetStep(3);
     }
   };
+  //console.log(activeQuestion)
+
+
+  const backClickHandler = () => {  
+   
+}
+
   return (
     <div className="card">
       <div className="card-content">
@@ -104,12 +99,11 @@ const Question = ({
             ))}
           </div>
           
-         
 
-          <button disabled={selected.length<1} onClick={backClickHandler} className="button is-link is-medium is-fullwidth mt-4"> Back</button>
+          <button onClick={backClickHandler} className="btn button is-link is-medium is-fullwidth mt-4"> Back</button>
 
           <button
-            className="button is-link is-medium is-fullwidth mt-4"
+            className="btn button is-link is-medium is-fullwidth mt-4"
             onClick={nextClickHandler}
           >
             Next
