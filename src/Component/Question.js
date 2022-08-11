@@ -37,9 +37,6 @@ const Question = ({
     
 
     elems.map((elem) => (elem.checked = false));
-
-   
-
     let answerSelected = Array.from(selected);
 
     if(answerSelected.length==0){
@@ -74,6 +71,9 @@ const Question = ({
 
 
   const backClickHandler = () => {  
+    if (activeQuestion !== 0) {
+      onSetActiveQuestion(activeQuestion - 1);
+    } 
    
 }
 
@@ -92,16 +92,18 @@ const Question = ({
                   value={choice}
                   id={i}
                   onChange={changeHandler}
-            onClick={()=>setError(!error)}
+                  onClick={()=>setError(!error)}
                 />
                 {choice}
               </label>
             ))}
           </div>
           
-
-          <button onClick={backClickHandler} className="btn button is-link is-medium is-fullwidth mt-4"> Back</button>
-
+       {activeQuestion !== 0?
+          <button  onClick={backClickHandler} className="btn button is-link is-medium is-fullwidth mt-4"> Back
+          
+          </button>: ''}
+        
           <button
             className="btn button is-link is-medium is-fullwidth mt-4"
             onClick={nextClickHandler}
